@@ -1,0 +1,48 @@
+@import "styles/variables";
+
+.contain{
+    height: 100vh;
+    background: rgba(198, 244, 199, 0.4);
+    padding: 0 106px 0 128px;
+}
+
+.heade{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 44px;
+
+    button {
+        width: 142px;
+        height: 43px;
+        background: rgba(20, 102, 219, 0.9);
+        border: none;
+        border-radius: 3px;
+        color: $white;
+        font-weight: 600;
+        font-size: 16px;
+
+    }
+
+}
+.frm {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    
+    input{
+        padding-bottom: 20px;
+        width: 195px;
+    }
+}
+
+.split{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.tasks {
+    width: 684px;
+    height: 375px;
+    background: $white;
+}

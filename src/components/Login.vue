@@ -7,7 +7,7 @@
       </div>
       <div class="frmgrp">
         <h3>LOGIN</h3>
-        <form action="" id="loginform">
+        <form  id="loginform">
           <label for="Username"></label>
           <input type="email" name="email" placeholder="Username">
           <label for="Password"></label>
@@ -17,7 +17,7 @@
             <option value="home">Home</option>
             <option value="Office">Office</option>
           </select>
-          <input type="submit">
+          <input type="submit" value="Login to your account">
         </form>
       </div>
     </div>
@@ -38,23 +38,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.container{
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}
-.head{
-  display: flex;
-}
+<style lang="scss">
 
-.frmgrp{
-  display: flex;
-  flex-direction: column;
-
- form{
-   display:flex;
-   flex-direction: column;
- }
-}
 </style>

@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap');
+$default-fonts: 'Montserrat', 'sans-serif';
+$white : #FFFFFF;
+$black: #000;
+
 body{
     padding:0;
     margin: 0;
-    height: 100%;
-    // background: linear-gradient(360deg, #0E9347 0%, rgba(122, 193, 151, 0.51) 100%, rgba(33, 34, 33, 0.51) 100%);
-    // background: #0E9347;
-    background: linear-gradient(360deg, #0E9347 0%, rgba(122, 193, 151, 0.51) 100%, rgba(33, 34, 33, 0.51) 100%);
+   
+    font-family: $default-fonts;
 }
