@@ -2,7 +2,7 @@
 <div class="contain">
     <div class="heade">
         <h2>Welcome Adejuwon Oshadipe</h2>
-        <button>Logout</button>
+         <router-link to="/"><button>Logout</button></router-link>     
     </div>
     <div class="split">
         <div>
@@ -10,27 +10,40 @@
             <form class="frm">
                 <select name="" id="">
                     <option value="betxchange">Betxchange</option>
-                    <option value="betxchange">Betxchange</option>
-                    <option value="betxchange">Betxchange</option>
-                    <option value="betxchange">Betxchange</option>
+                    <option value="general">General</option>
+                    <option value="goldenchancebet">GoldenChanceBet</option>
+                    <option value="lottoonline">LottoOnline</option>
+                    <option value="pools">Pools</option>
+                    <option value="rss">Rss</option>
+                    <option value="ussd">Ussd</option>
+                    <option value="wgbbet">WgbBet</option>
                 </select>
-                <label for="products">Products</label>
-                <input type="text" name="products">
-                <label for="agent">Agent</label>
-                <input type="text" name="agent">
-                <label for="shop">Shop/Terminal</label>
-                <input type="text" name="shop">
-                <label for="event">Event</label>
-                <input type="text" name="event">
+                <div>
+                    <label for="products">Products: </label>
+                    <input type="text" name="products">
+                </div>
+                <div>
+                     <label for="agent">Agent: </label>
+                     <input type="number" name="agent">
+                </div>
+                <div>
+                    <label for="shop">Shop/Terminal: </label>
+                    <input type="text" name="shop">
+                </div>
+                <div>
+                    <label for="event">Event: </label>
+                    <input type="text" name="event">
+                </div>
                 <label for="comments"></label>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Comments"></textarea>
-                <div>
+                <div class="btm">
+                    <label for="">Status</label>
                     <select name="" id="">
                         <option value="pending">Pending</option>
                         <option value="resolved">Resolved</option>
                     </select>
-                    <input type="button" value="Submit">
                 </div>
+                <input type="button" value="Submit">
             </form>
         </div>
         <div>
@@ -68,8 +81,6 @@
             </div>
         </div>
     </div>
- 
-   
 </div>  
 </template>
 

@@ -17,7 +17,7 @@
             <option value="home">Home</option>
             <option value="Office">Office</option>
           </select>
-          <input type="submit" value="Login to your account">
+          <router-link to="home"><input type="submit" value="Login to your account"></router-link>
         </form>
       </div>
     </div>
