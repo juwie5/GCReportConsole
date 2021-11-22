@@ -19,19 +19,19 @@
                     <option value="wgbbet">WgbBet</option>
                 </select>
                 <div>
-                    <label for="products">Products: </label>
+                    <label for="products">Products </label>
                     <input type="text" name="products">
                 </div>
                 <div>
-                     <label for="agent">Agent: </label>
+                     <label for="agent">Agent </label>
                      <input type="number" name="agent">
                 </div>
                 <div>
-                    <label for="shop">Shop/Terminal: </label>
+                    <label for="shop">Shop/Terminal </label>
                     <input type="text" name="shop">
                 </div>
                 <div>
-                    <label for="event">Event: </label>
+                    <label for="event">Event </label>
                     <input type="text" name="event">
                 </div>
                 <label for="comments"></label>
@@ -43,7 +43,10 @@
                         <option value="resolved">Resolved</option>
                     </select>
                 </div>
-                <input type="button" value="Submit">
+                <div>
+                    <input type="button" value="Submit">
+                    <input type="reset">
+                </div>
             </form>
         </div>
         <div>
@@ -55,13 +58,18 @@
                         <th>Event</th>
                         <th>Time</th>
                     </tr>
-                    <tr>
+                    <tr class="tablecontent">
+                        <th>Betxchange</th>
+                        <th>Agency Creation</th>
+                        <th>25-10-2021 09:32AM</th>
+                    </tr>
+                     <tr class="tablecontent">
                         <th>Betxchange</th>
                         <th>Agency Creation</th>
                         <th>25-10-2021 09:32AM</th>
                     </tr>
                 </table>
-                <button>Load</button>
+                <button class="taskbtn">Load</button>
             </div>
             <div class="tasks">
                 <h4>Completed Tasks</h4>
@@ -71,13 +79,18 @@
                         <th>Event</th>
                         <th>Time</th>
                     </tr>
-                    <tr>
+                    <tr class="tablecontent">
+                        <th>Betxchange</th>
+                        <th>Agency Creation</th>
+                        <th>25-10-2021 09:32AM</th>
+                    </tr>
+                    <tr class="tablecontent">
                         <th>Betxchange</th>
                         <th>Agency Creation</th>
                         <th>25-10-2021 09:32AM</th>
                     </tr>
                 </table>
-                <button>Load</button>
+                <button class="taskbtn">Load</button>
             </div>
         </div>
     </div>

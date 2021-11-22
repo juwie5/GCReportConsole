@@ -34,10 +34,44 @@
     select {
         margin-bottom: 20px;
     }
+    label{
+        font-size: 16px;
+        font-weight: 600;
+    }
     input{
         margin-bottom: 20px;
-         width: 195px;
-         background:  rgba(158, 226, 165, 0.73);
+        width: 195px;
+        height: 30px;
+        background:  rgba(158, 226, 165, 0.73);
+        border: none;
+        outline: none;
+        font-size: 16px;
+
+       
+    }
+    input:focus{
+        border: 1px solid rgba(20, 102, 219, 0.9);
+    } 
+    input[type=text]:focus{
+        border: 1px solid rgba(20, 102, 219, 0.9);
+        outline: 1px solid rgba(20, 102, 219, 0.9);
+    }
+    input[type="button"]{
+        height: 40px;
+        width: 130px;
+        background: #1466DB;
+        border-radius: 3px;
+        color: $white;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    input[type="reset"]{
+        height: 40px;
+        width: 130px;
+        background: #F90707;
+        border-radius: 3px;
+        color: $white;
+        font-size: 16px;
     }
 }
 
@@ -58,6 +92,34 @@
     width: 650px;
     height: 375px;
     background: $white;
+    position: relative;
+    h4{
+        padding: 20px 0 0 50px;
+    }
+    table{
+        display: flex;
+        justify-content: center;
+    }
+    th{
+        padding: 10px;
+    }
+    .tablecontent{
+        font-size: 12px;
+    
+        th{
+            font-weight: 400;
+        }
+    }
+    .taskbtn{
+        position: absolute;
+        right: 20px;
+        width: 88px;
+        height: 30px;
+        background: #1466DB;
+        color: $white;
+        border: none;
+        border-radius: 3px;
+    }
 }
 
 @media only screen  and (max-width: 1440px){
@@ -66,9 +128,25 @@
    } 
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    .contain{
+        width: 100%;
+        height:100%;
+    }
+
+    .heade{
+        h2{
+            font-size: 12px;
+        }
+    }
+
     .split{
         display: flex;
         flex-direction: column;
+    }
+
+    .tasks{
+        width: 435px;
+
     }
 }
