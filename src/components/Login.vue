@@ -46,8 +46,8 @@ export default {
         .then((userCredential) => {
           console.log(userCredential.user)
           this.$router.push({name: 'Home'})
-        }).catch( err => {
-          this.feedback = err.message
+        }).catch( error => {
+          this.feedback = error.message
         })
          this.feedback = null;
       } else {
