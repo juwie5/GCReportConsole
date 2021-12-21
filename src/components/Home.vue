@@ -7,8 +7,8 @@
     <div class="split">
         <div>
             <h3>Log New Task</h3>
-            <form class="frm">
-                <select name="" id="">
+            <form  ref="form" class="frm" @submit.prevent="task">
+                <select name="" id="selectedTask" v-model="selectedTask">
                     <option value="betxchange">Betxchange</option>
                     <option value="general">General</option>
                     <option value="goldenchancebet">GoldenChanceBet</option>
@@ -19,32 +19,32 @@
                     <option value="wgbbet">WgbBet</option>
                 </select>
                 <div>
-                    <label for="products">Products </label>
-                    <input type="text" name="products">
+                    <label for="products">Products</label>
+                    <input type="text" name="products" v-model="products">
                 </div>
                 <div>
                      <label for="agent">Agent </label>
-                     <input type="number" name="agent">
+                     <input type="number" name="agent" v-model="agent">
                 </div>
                 <div>
                     <label for="shop">Shop/Terminal </label>
-                    <input type="text" name="shop">
+                    <input type="text" name="shop" v-model="shopTerminal">
                 </div>
                 <div>
-                    <label for="event">Event </label>
-                    <input type="text" name="event">
+                    <label for="event">Event</label>
+                    <input type="text" name="event" v-model="event">
                 </div>
                 <label for="comments"></label>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Comments"></textarea>
+                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Comments" v-model="comments"></textarea>
                 <div class="btm">
-                    <label for="">Status</label>
-                    <select name="" id="">
+                    <label for="status">Status</label>
+                    <select name="" id="tatus" v-model="status">
                         <option value="pending">Pending</option>
                         <option value="resolved">Resolved</option>
                     </select>
                 </div>
                 <div>
-                    <input type="button" value="Submit">
+                    <input type="submit" value="Submit">
                     <input type="reset">
                 </div>
             </form>
@@ -91,6 +91,7 @@
                     </tr>
                 </table>
                 <button class="taskbtn">Load</button>
+                <p>{{this.station}}</p>
             </div>
         </div>
     </div>
@@ -98,7 +99,43 @@
 </template>
 
 <script>
+import db from '../services/firebase';
+import {collection, addDoc} from "firebase/firestore";
 export default {
+    name: 'Home',
+    props: ['station', 'uid'],
+    data(){
+        return{
+            selectedTask : null,
+            products : null,
+            agent : null,
+            shopTerminal : null,
+            event : null,
+            comments : null, 
+            status : null
+        }
+    }, 
+    methods:{
+       task(){
+         try{
+             const docRef = addDoc(collection(db, "tasks"), {
+                user: this.uid,
+                station: this.station,
+                selectedTask : this.selectedTask,
+                products: this.products,
+                agent: this.agent,
+                shopTerminal : this.shopTerminal,
+                event: this.event,
+                comments : this.comments,
+                status: this.status,
+                time:  new Date()
+            }).then(this.$refs.form.reset());
+            }catch(e){
+                console.log(`Error adding document: `, e);
+            }
+         }   
+       }
+
     
 }
 </script>

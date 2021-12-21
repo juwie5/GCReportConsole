@@ -37,6 +37,7 @@
     label{
         font-size: 16px;
         font-weight: 600;
+        padding-right: 3px;
     }
     input{
         margin-bottom: 20px;
@@ -56,7 +57,7 @@
         border: 1px solid rgba(20, 102, 219, 0.9);
         outline: 1px solid rgba(20, 102, 219, 0.9);
     }
-    input[type="button"]{
+    input[type="submit"]{
         height: 40px;
         width: 130px;
         background: #1466DB;

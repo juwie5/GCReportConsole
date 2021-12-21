@@ -12,7 +12,7 @@
           <input type="email" name="email" placeholder="Username" v-model="email">
           <label for="Password"></label>
           <input type="password" name="password" placeholder="Password" v-model="password">
-          <select name="worklist" id="" form="loginform">
+          <select name="worklist" form="loginform" v-model="station">
             <option></option>
             <option value="home">Home</option>
             <option value="office">Office</option>
@@ -36,7 +36,8 @@ export default {
       email:null,
       password: null,
       feedback: null,
-      station: null
+      station: null,
+      uid: null
     }
   },
   methods:{
@@ -45,7 +46,9 @@ export default {
         signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           console.log(userCredential.user)
-          this.$router.push({name: 'Home'})
+          this.uid = userCredential.user.uid
+          console.log(this.station)
+          this.$router.push({name: 'Home', params:{station: this.station, uid: this.uid}})
         }).catch( error => {
           this.feedback = error.message
         })
