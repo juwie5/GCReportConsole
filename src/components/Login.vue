@@ -45,9 +45,8 @@ export default {
       if(this.email && this.password){
         signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
-          console.log(userCredential.user)
           this.uid = userCredential.user.uid
-          console.log(this.station)
+          
           this.$router.push({name: 'Home', params:{station: this.station, uid: this.uid}})
         }).catch( error => {
           this.feedback = error.message

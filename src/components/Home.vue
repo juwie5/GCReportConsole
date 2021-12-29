@@ -20,7 +20,7 @@
                 </select>
                 <div>
                     <label for="products">Products</label>
-                    <input type="text" name="products" v-model="products">
+                    <input type="text" name="products" v-model="products" required>
                 </div>
                 <div>
                      <label for="agent">Agent </label>
@@ -32,10 +32,10 @@
                 </div>
                 <div>
                     <label for="event">Event</label>
-                    <input type="text" name="event" v-model="event">
+                    <input type="text" name="event" v-model="event" required>
                 </div>
                 <label for="comments"></label>
-                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Comments" v-model="comments"></textarea>
+                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Comments" v-model="comments" required></textarea>
                 <div class="btm">
                     <label for="status">Status</label>
                     <select name="" id="tatus" v-model="status">
@@ -91,7 +91,6 @@
                     </tr>
                 </table>
                 <button class="taskbtn">Load</button>
-                <p>{{this.station}}</p>
             </div>
         </div>
     </div>
