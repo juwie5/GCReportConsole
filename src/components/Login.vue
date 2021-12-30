@@ -13,7 +13,6 @@
           <label for="Password"></label>
           <input type="password" name="password" placeholder="Password" v-model="password">
           <select name="worklist" form="loginform" v-model="station">
-            <option></option>
             <option value="home">Home</option>
             <option value="office">Office</option>
           </select>
@@ -46,7 +45,7 @@ export default {
         signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           this.uid = userCredential.user.uid
-          
+
           this.$router.push({name: 'Home', params:{station: this.station, uid: this.uid}})
         }).catch( error => {
           this.feedback = error.message

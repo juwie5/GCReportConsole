@@ -86,7 +86,6 @@
 .split{
     display: flex;
     justify-content: space-around;
-
 }
 
 .tasks {
@@ -133,6 +132,7 @@
     .contain{
         width: 100%;
         height:100%;
+        padding: 0;
     }
 
     .heade{
@@ -144,10 +144,20 @@
     .split{
         display: flex;
         flex-direction: column;
+        h3{
+            font-size: 12px;
+        }
+    }
+
+    .frm{
+        width: 300px;
+        input{
+            width: 145px;
+        }
     }
 
     .tasks{
-        width: 435px;
+        width: 100%;
 
     }
 }

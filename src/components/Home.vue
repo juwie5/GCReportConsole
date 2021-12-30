@@ -8,7 +8,7 @@
         <div>
             <h3>Log New Task</h3>
             <form  ref="form" class="frm" @submit.prevent="task">
-                <select name="" id="selectedTask" v-model="selectedTask">
+                <select name="" id="selectedTask" v-model="selectedTask" required>
                     <option value="betxchange">Betxchange</option>
                     <option value="general">General</option>
                     <option value="goldenchancebet">GoldenChanceBet</option>
