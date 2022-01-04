@@ -1,8 +1,8 @@
 <template>
 <div class="contain">
     <div class="heade">
-        <h2>Welcome Adejuwon Oshadipe</h2>
-         <router-link to="/"><button>Logout</button></router-link>     
+        <h2>Welcome {{currentUser.fname}} {{currentUser.lname}}</h2>
+        <router-link to="/"><button>Logout</button></router-link>     
     </div>
     <div class="split">
         <div>
@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <input type="submit" value="Submit">
-                    <input type="reset">
+                    <input type="reset" @click="getUsers">
                 </div>
             </form>
         </div>
@@ -99,7 +99,7 @@
 
 <script>
 import db from '../services/firebase';
-import {collection, addDoc} from "firebase/firestore";
+import {collection, addDoc, getDocs} from "firebase/firestore";
 export default {
     name: 'Home',
     props: ['station', 'uid'],
@@ -111,7 +111,8 @@ export default {
             shopTerminal : null,
             event : null,
             comments : null, 
-            status : null
+            status : null,
+            currentUser: {}
         }
     }, 
     methods:{
@@ -132,10 +133,20 @@ export default {
             }catch(e){
                 console.log(`Error adding document: `, e);
             }
-         }   
-       }
-
+         }, 
     
+       },
+       created(){
+            const colRef = collection(db, "users")
+            getDocs(colRef).then((snapshot) =>{
+                let user = []
+                snapshot.docs.forEach((doc) => {
+                    user.push({...doc.data(), id: doc.id})
+                })
+                this.currentUser = user.find(element => element.id == this.uid)
+                console.log(this.currentUser)
+            })
+       }        
 }
 </script>
 <style lang="scss" >

@@ -10,6 +10,10 @@
     display: flex;
     justify-content: space-between;
     padding-top: 44px;
+    h2{
+        margin: 0;
+        font-size: 18px;
+    }
 
     button {
         width: 142px;
@@ -20,7 +24,6 @@
         color: $white;
         font-weight: 600;
         font-size: 16px;
-
     }
 
 }
@@ -86,6 +89,9 @@
 .split{
     display: flex;
     justify-content: space-around;
+    h3{
+        font-size: 18px;
+    }
 }
 
 .tasks {
@@ -136,7 +142,13 @@
     }
 
     .heade{
+        display: flex;
+        justify-content: space-around;
         h2{
+            font-size: 12px;
+        }
+        button {
+            width: 100px;
             font-size: 12px;
         }
     }
