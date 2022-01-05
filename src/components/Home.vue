@@ -17,6 +17,7 @@
                     <option value="rss">Rss</option>
                     <option value="ussd">Ussd</option>
                     <option value="wgbbet">WgbBet</option>
+                    <option value="betxp">Betxperience</option>
                 </select>
                 <div>
                     <label for="products">Products</label>
