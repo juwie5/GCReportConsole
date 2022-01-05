@@ -45,8 +45,9 @@ export default {
         signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           this.uid = userCredential.user.uid
-
-          this.$router.push({name: 'Home', params:{station: this.station, uid: this.uid}})
+           localStorage.setItem('uid', this.uid)
+           localStorage.setItem('station', this.station)
+          this.$router.push({name: 'Home'})
         }).catch( error => {
           this.feedback = error.message
         })

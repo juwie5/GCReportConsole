@@ -2,7 +2,7 @@
 <div class="contain">
     <div class="heade">
         <h2>Welcome {{currentUser.fname}} {{currentUser.lname}}</h2>
-        <router-link to="/"><button>Logout</button></router-link>     
+        <router-link to="/"><button @click="clearLocalStorage">Logout</button></router-link>     
     </div>
     <div class="split">
         <div>
@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <input type="submit" value="Submit">
-                    <input type="reset" @click="getUsers">
+                    <input type="reset">
                 </div>
             </form>
         </div>
@@ -102,7 +102,6 @@ import db from '../services/firebase';
 import {collection, addDoc, getDocs} from "firebase/firestore";
 export default {
     name: 'Home',
-    props: ['station', 'uid'],
     data(){
         return{
             selectedTask : null,
@@ -119,8 +118,8 @@ export default {
        task(){
          try{
              const docRef = addDoc(collection(db, "tasks"), {
-                user: this.uid,
-                station: this.station,
+                user: localStorage.getItem('uid'),
+                station: localStorage.getItem('station'),
                 selectedTask : this.selectedTask,
                 products: this.products,
                 agent: this.agent,
@@ -134,7 +133,9 @@ export default {
                 console.log(`Error adding document: `, e);
             }
          }, 
-    
+            clearLocalStorage(){
+                localStorage.clear()
+            }
        },
        created(){
             const colRef = collection(db, "users")
@@ -143,8 +144,7 @@ export default {
                 snapshot.docs.forEach((doc) => {
                     user.push({...doc.data(), id: doc.id})
                 })
-                this.currentUser = user.find(element => element.id == this.uid)
-                console.log(this.currentUser)
+                this.currentUser = user.find(element => element.id == localStorage.getItem('uid'))
             })
        }        
 }
