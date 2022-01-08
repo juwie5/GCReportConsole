@@ -122,7 +122,7 @@ export default {
                 },
                 {
                     label:"Goldenchancebet",
-                    options:["ACCOUNT BLOCKED","AGENCY CREATION","ELBET SHP ACT","LIVE EVENT","ODDS","TICKET UPDATE"]
+                    options:["ACCOUNT BLOCKED","AGENCY CREATION","ELBET SHP ACT","LIVE EVENT","ODDS","TICKET UPDATE","DEVELOPMENT"]
                 }, 
                 {
                     label:"Lotto Online",
@@ -139,6 +139,10 @@ export default {
                 {
                     label:"Ussd",
                     options:["MANUAL PAYOUT", "SERVICE TIMEOUT"]
+                },
+                {
+                    label:"Wgb",
+                    options:["ACCOUNT BLOCKED","AGENCY CREATION","ELBET SHP ACT","LIVE EVENT","NO SUCH USER","ODDS","PASSWORD CHNG","SALES UPLOAD","TICKET UPDATE","DEVELOPMENT"]
                 }
             ],
             selectedTask: -1,
